@@ -43,7 +43,7 @@ Function Set-Output() {
     $value
   )
   if ($env:GITHUB_ACTIONS -eq 'true') {
-    Write-Output "::set-output name=$output::$value"
+    Write-Output "$output=$value" >> $GITHUB_OUTPUT
   }
 }
 

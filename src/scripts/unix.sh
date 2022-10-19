@@ -43,7 +43,7 @@ set_output() {
   name=$1
   value=$2
   if [ "${GITHUB_ACTIONS}" = "true" ]; then
-    echo "::set-output name=${name}::${value}"
+    echo "${name}=${value}" >> $GITHUB_OUTPUT
   fi
 }
 
